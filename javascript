@@ -14,3 +14,16 @@ var data = '22/05/2023';
       var NomeDoDiaDaSemana = diasDaSemana[NumeroDoDiaDaSemana];
 console.log(NomeDoDiaDaSemana);
 
+
+//item entre string
+
+const texto = "Este é o Inicio texto que queremos extrair conteúdo DE Fim dentro dele";
+const inicio = "Inicio";
+const fim = "Fim";
+
+const regex = new RegExp(`${inicio}(.*?)${fim}`);
+
+const resultado = regex.exec(texto);
+const conteudo = resultado[1]; 
+
+console.log(conteudo);
