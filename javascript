@@ -1,3 +1,4 @@
+https://www.devmedia.com.br/css3-flexbox-funcionamento-e-propriedades/29532
 // Lista de itens entre strings:
 const texto = '1Esta é2 uma 1lista2 de 1itens:2 '; 
 const regex = /(?<=1)(.|\n)*?(?=2)/g; 
